@@ -1,0 +1,33 @@
+# Sentimen Analysis menggunakan Support Vector Machine (SVM)
+
+Proyek ini bertujuan untuk melakukan analisis sentimen terhadap data teks menggunakan algoritma Support Vector Machine (SVM), dengan ekstraksi fitur TF-IDF serta pemrosesan bahasa alami menggunakan library Python seperti TextBlob dan NLTK
+
+**Sentiment Analysis (Analisis Sentimen)** adalah teknik dalam pemrosesan bahasa alami (Natural Language Processing/NLP) untuk menentukan apakah suatu teks bersifat positif, negatif, atau netral. Dalam proyek ini, sentimen diklasifikasikan menjadi dua label:
+
+- 1 :Positif
+- 0 :Negatif
+
+**Library yang digunakan** seperti pandas, numpy matplotlib dan seaborn untuk visualiasasi, dan ada tambahan **TexBlob** dan **NLTK** untuk tokenisasi, stopword, dan lemmatization. Kemudian terdapat scikit-learn untuk klasifikasi dan evaluasi
+
+**Preprocessing Teks**
+Langkah-langkah preprocessing:
+1. Tokenisasi menggunakan TextBlob
+2. Lemmatization (mengambil bentuk dasar kata)
+3. Vectorisasi:
+- CountVectorizer (Bag of Words)
+- TF-IDF Transform
+4. Split dataset menjadi 80% data latih dan 20% data uji
+
+**Trainining dan Model SVM**
+Model dibangun menggunakan Pipeline, dengan parameter tuning menggunakan GridSearchCV. Parameter yang diuji:
+- Kernel: 'linear', 'rbf'
+- C: 1, 10, 100, 1000
+- Gamma (untuk RBF): 0.001, 0.0001
+
+**Hasil Evaluasi**
+Evaluasi dilakukan pada 20% data uji. Hasil evaluasi dengan precision 99%, recall 99%, F1-score 99%, dan accuracy 99%.
+
+**Kesimpulan**
+- Model SVM yang dibangun dengan kombinasi TF-IDF dan lemmatization menunjukkan akurasi sangat tinggi sebesar 99%.
+- Hal ini menunjukkan bahwa pendekatan preprocessing yang baik dan parameter tuning yang optimal sangat berperan dalam meningkatkan performa klasifikasi.
+- Model mampu secara efektif membedakan sentimen positif dan negatif dari teks ulasan.
